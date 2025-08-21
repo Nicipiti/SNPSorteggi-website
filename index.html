@@ -132,7 +132,7 @@
                 <h2>Verifica i tuoi numeri</h2>
                 <p>Inserisci uno o più numeri separati da virgola (es: 11111,22222,33333):</p>
                 <form onsubmit="verificaNumeri(); return false;">
-                    <input type="text" id="input-numeri" placeholder="Inserisci numeri...">
+                    <input type="text" id="input-numeri" placeholder="Inserisci numeri..." pattern="[0-9,]*" inputmode="numeric" title="Inserisci solo numeri e virgole">
                     <button type="submit">Verifica</button>
                 </form>
                 <div id="risultato" class="result"></div>
