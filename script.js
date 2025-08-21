@@ -14,6 +14,7 @@ function verificaNumeri() {
     const input = document.getElementById('input-numeri').value;
     const numeri = input.split(',').map(n => n.trim()).filter(n => n);
     const risultati = [];
+    let winningNumbers = [];
 
     numeri.forEach(numero => {
         let trovato = false;
@@ -27,10 +28,15 @@ function verificaNumeri() {
         }
         if (trovato) {
             risultati.push(`<span class='success'>✅ Numero <b>${numero}</b> VINCENTE!</span><div class='match-details'>${dettagli}</div>`);
+            winningNumbers.push(numero);
         } else {
             risultati.push(`<span class='fail'>❌ Numero <b>${numero}</b> NON vincente.</span>`);
         }
     });
 
     document.getElementById('risultato').innerHTML = risultati.join('<hr>');
+    gtag('event', 'verifica_numeri', {
+        'input_numeri': numeri.join(','),
+        'numeri_vincenti': winningNumbers.join(',')
+    });
 }
