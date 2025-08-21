@@ -10,6 +10,16 @@
             background: #f7f7f7;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main{
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     
         .container {
@@ -92,21 +102,21 @@
             margin-top: 6px;
         }
         footer {
-            position: absolute;
-            bottom: 0;
+            flex-shrink: 0;
             text-align: center;
             width: 100%;
             color: #acacac;
             filter: grayscale(100%);
             font-size: 0.7rem;
-            padding: 0 2rem;
-            margin: auto;
+            padding: 0 2rem 1rem 2rem;
+            margin: 0;
             box-sizing: border-box;
+            position: static;
         }
     </style>
 </head>
 <body>
-    <div class="parent-container">
+    <main>
         <div class="container">
             <img src="image.jpg" alt="San Nicolò Politi" loading="eager" class="img-abs">
             <div class="input-area">
@@ -120,7 +130,7 @@
                 <div id="risultato" class="result"></div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="script.js"></script>
     <footer>
         <p>La verifica delle vincite tramite questo sito ha valore puramente informativo e non costituisce in alcun modo garanzia ufficiale di vittoria. L’unica fonte valida resta quella comunicata dagli organizzatori del sorteggio. Questo sito non è affiliato né riconosciuto dal Comitato di San Nicolò Politi né da altri enti ufficiali.</p>
